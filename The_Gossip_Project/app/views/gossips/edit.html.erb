@@ -1,0 +1,18 @@
+<!-- ... -->
+<% if @current_user %>
+  <%= form_for @gossip do |f| %>
+    <%= f.label 'Titre du Gossip' %><br>
+    <%= f.text_field :title %><br>
+
+    <%= f.label 'Contenu du Gossip' %><br>
+    <%= f.text_area :content %><br>
+
+    <%= f.submit "Submit Article" %>
+  <% end %>
+
+<% else %>
+
+  <p> Merci de vous connecter </p>
+
+<% end %>
+<!-- ... -->

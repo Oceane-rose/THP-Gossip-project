@@ -1,0 +1,29 @@
+<!-- ... -->
+
+<br>
+<br>
+      
+<form action= <%= currentusers_path %> method="POST">
+
+<input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+
+<div class="container"> 
+
+<div class="form-group row"> 
+    <label class="col-sm-3 col-form-label">Ton email </label>
+  <input class="col-2" type="text" name="login_email">
+</div>
+
+<div class="form-group row"> 
+    <label class="col-sm-3 col-form-label">Ton mot de passe </label>
+  <input class="col-2" type="text" name="login_password">
+</div>
+
+<div class="form-group row">
+  <input class="col-2" type="submit" value="Log in">
+</div>
+
+</form>
+
+
+<!-- ... -->

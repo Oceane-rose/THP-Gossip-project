@@ -1,0 +1,17 @@
+
+<% if @current_user %>
+
+    <p>Description : <%= @user.description%></p>
+
+    <p> Identité :  <%=@user.last_name%> <%=@user.first_name%></p>
+    <p>Age : <%= @user.age%></p>
+    <p>Email : <%= @user.email%></p>
+    <p>Ville : <%= @city.name %></p>
+
+    <a class="nav-link" <%= link_to "Vas vers la page de ta ville"+@user.city.name, city_path(:id => @user.city.id) %> </a>
+
+<% else %>
+
+<p> Merci de te connecter </p>
+
+<% end %>

@@ -1,0 +1,50 @@
+
+
+        <!-- Jumbotron-->
+        
+	<div class="jumbotron" style="background-image: url( https://media.kasperskydaily.com/wp-content/uploads/sites/92/2016/07/06021844/social-networking-rules-featured.jpg) no-repeat background-size: 50%; text-align: center;">
+		<h1 class="display-4 pt-5 font-weight-bold text-dark">Bienvenue <%= @first_name %> sur The Gossip Project</h1>
+		<a class="display-4" href="gossips.jpg" style="color:rgb(255, 250, 250)" >Partez a l'aventure</a>	
+        <h2 class="display-5" style="color:rgb(255, 250, 250)" >Voici tous les Gossips du moment</h2> 
+
+            <div class="row justify-content-center">
+            <button type="button" class="btn btn-info w-25"data-confirm:"Souhaitez vous vraiment continuer ?">
+            <%= link_to"Connecte toi !", new_currentuser_path, class:"text-white" %> </button>
+            </div
+    </div>
+
+
+
+
+
+<div class="card-columns">
+
+<% Gossip.all.each do |gossip| %>  
+
+    <div class="card"> 
+
+        <div class="card-header"
+
+            <h4 class="card-title"> 
+                <div class="d-flex justify-content-center"><%= gossip.title %> </div> <!accessing title of gossip>
+            </h4>  
+
+        </div>
+
+        <div class="card-body">
+
+            <p class="card-text">
+                <div class="d-flex justify-content-center"> <%= gossip.user.first_name %> </div> <!accessing firstname of Author/owner of Gossip>
+            </p>   
+
+            <div class="card-footer">
+                <div class="d-flex justify-content-center"> 
+                <%= link_to "Voir le Gossip", gossip_path(:id => gossip.id), class: "text-decoration-none card-title" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<% end %>
+
+</div>

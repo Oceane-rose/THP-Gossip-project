@@ -1,0 +1,34 @@
+
+    <!-- ... -->
+
+      <% if @current_user %>
+      
+        <form action= <%= gossips_path %> method="POST">
+
+        <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+
+        <div class="container"> 
+    
+        <div class="form-group row"> 
+            <label class="col-sm-2 col-form-label">Rentre le titre de ton Gossip </label>
+          <input class="col-2" type="text" name="gossip_text">
+        </div>
+    
+        <div class="form-group row"> 
+            <label class="col-sm-2 col-form-label">Rentre ton contenu secret </label>
+          <input class="col-5" type="text" name="gossip_content">
+        </div>
+    
+        <div class="form-group row">
+          <input class="col-2" type="submit" value="Valider">
+        </div>
+
+        </form>
+
+      <% else %>
+
+      <p> Merci de vous connecter </p>
+
+      <% end %>
+
+    <!-- ... -->

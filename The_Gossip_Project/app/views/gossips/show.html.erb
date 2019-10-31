@@ -1,0 +1,37 @@
+
+
+
+<% if @current_user %>
+
+    <h1>Bienvenue sur la page du gossip n° <%= @gossip.id %></h1>
+
+
+    <p>Gossip rédigé par : <%= @gossip.user.first_name %></p> 
+    <p>Sa ville :  <%= @gossip.user.city.name%></p>
+    <p>Crée le : <%= @gossip.created_at%></p>
+    <p>Le titre du Gossip : <%= @gossip.title%></p>
+    <p>Voici le gossip : <%= @gossip.content%></p>
+
+    <% #redirection vers la fiche auteur du gossip %>
+
+    <a class="nav-link" <%= link_to "Page de "+@gossip.user.first_name, user_path(:id => @gossip.user_id) %> </a>
+
+    <% #redirection vers la fiche ville du gossip %>
+
+    <a class="nav-link" <%= link_to "Vas vers la page de ta ville"+@gossip.user.city.name, city_path(:id => @gossip.user.city.id) %> </a>
+
+    <% #redirection vers la page de modification du gossip %>
+
+    <a class="nav-link" <%= link_to "Modifie ton Gossip",  edit_gossip_path(:id => @gossip.id)%> </a>
+
+    <div class="row justify-content-center">
+
+    <button type="button" class="btn btn-danger col-2 " data-confirm:"Souhaitez vous vraiment continuer ?"><%= link_to"Supprimer", gossip_path, method: :delete, class:"text-white" %> </button>
+
+    </div>
+
+<% else %>
+
+    <p> Merci de vous connecter </p>
+
+<% end %>

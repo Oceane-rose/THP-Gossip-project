@@ -1,0 +1,25 @@
+<h1>Bienvenue sur la page de la ville de </h1>
+
+<h2> <%= @city.name%> </h2>
+
+<div class="row" style="margin-left: 0px; margin-right: 0px;"><% @city.users.each do |user|%>
+
+  <div class="col-sm-6"><div class="card" style="width: 25rem;">
+
+   <div class="card-body">
+
+     <h5 class="card-title"><%user.gossips.each do |gossip|%></h5>
+
+      <h5 class="card-title"><%=gossip.title%></h5>
+
+      <h5 class="card-subtitle"><%=gossip.content%></h5>
+
+     <% end %>
+
+   </div>
+
+ </div>
+
+</div>
+
+<% end %>

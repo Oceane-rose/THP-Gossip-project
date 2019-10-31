@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>GossipProjectControllerRoutesVersion</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <nav class="navbar navbar-expand navbar-light bg-danger">
+  <a class="navbar-brand text-white" href="#">The Gossip Project</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class=nav nav-pills nav-fill>
+    <li class="nav-item">
+
+      <% if @current_user %>
+
+
+        <%= link_to "Acceuil", welcome_logged_path(:id => @current_user.first_name), class:"nav-link active text-white" %> 
+
+      <% else %>
+
+      <%= link_to "Accuil", home_path, class:"nav-link active text-white" %> 
+
+      <% end %>
+      
+    </li>
+    <li class="nav-item">
+        <%= link_to "Team", team_path, class:"nav-link active text-white" %> 
+    </li>
+    <li class="nav-item">
+        <%= link_to "Contact",contact_path, class:"nav-link active text-white" %> 
+    </li>
+    </ul>
+
+    
+      <form class="form-inline ml-auto">
+      <div class="form-group mx-sm-3 mb-2">
+        <input class="form-control" type="search" placeholder="Chercher" aria-label="Search">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <button class="btn btn-primary" type="submit">Recherche</button>
+      </div>
+     
+      </form>
+    
+
+  </div>
+</nav>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <body>
+
+
+    
+    <%= yield %>
+  </body>
+
+  <!-- Footer -->
+
+  <div class="navbar navbar-expand navbar-light bg-danger fixed-bottom py-3">
+    <div class="col-12 bg-danger text-white">
+
+      <div class="container text-center">
+
+        <small>Copyright &copy; The Gossip Project</small>
+
+    </div>
+  </div>
+
+    <!-- Footer -->
+
+</html>

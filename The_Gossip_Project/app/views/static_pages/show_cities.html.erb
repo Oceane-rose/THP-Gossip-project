@@ -1,0 +1,15 @@
+<div class="row" style="margin-left: 0px; margin-right: 0px;"><% @city.each do |city| %>
+
+    <div class="col-sm-6"><div class="card" style="width: 25rem;">
+
+        <div class="card-body">
+            <h5 class="card-title"><%=city.name%></h5>
+            <%city.users.each do |user|%>
+                    <h5 class="card-subtitle m-2 text-muted"><%=user.first_name%><%=user.last_name%></h5>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<% end %>
+
