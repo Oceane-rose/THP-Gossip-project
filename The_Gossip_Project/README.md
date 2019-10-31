@@ -2,4 +2,12 @@
 
 Bienvenue sur notre page The Gossip Project !
 
-Attention aux gossips !
+THP The gossip Project Semaine 5 - Realise Par Oceane et Antoine LG
+
+Use :
+
+bundle install
+rails db:setup
+rails s
+
+Bonne visite !
