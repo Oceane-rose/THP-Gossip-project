@@ -10,4 +10,6 @@ bundle install
 rails db:setup
 rails s
 
+Nous nous sommes arretes au 2.5. Édition et destruction des potins
+
 Bonne visite !
